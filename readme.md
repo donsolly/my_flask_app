@@ -14,7 +14,7 @@ This repository contains a simple Flask application deployed to a Kubernetes clu
 Follow these steps to get your environment ready:
 
 1. Install [Docker](https://docs.docker.com/get-docker/)
-2. Install [Minikube](https://minikube.sigs.k8s.io/docs/start/) locally
+2. Install [Minikube](https://minikube.sigs.k8s.io/docs/start/) 
 3. Clone this repository: 
 ```
 git clone https://github.com/donsolly/my_flask_app.git
@@ -24,7 +24,7 @@ git clone https://github.com/donsolly/my_flask_app.git
 
 Before deploying, ensure to setup the necessary secrets and references:
 
-1. In your GitHub repository, create secrets for `DOCKER_PASSWORD` and `DOCKER_USERNAME`.
+1. In your GitHub repository, create secrets for `DOCKER_PASSWORD` & `DOCKER_USERNAME` & `GH_PAT` (Github Token).
 2. Update the following credentials:
     - `.github/workflows/main.yml` (Line 31, 47): DockerHub credentials
     - `clusters/my-cluster/flux-system/deployment.yaml`: DockerHub image reference
