@@ -19,7 +19,7 @@ mysql.init_app(app)
 @app.route("/")
 def index():
     """Home page of the API"""
-    return "Hi :D Say Hello"
+    return "Hi :D Thank you for having me"
 
 
 @app.route("/create", methods=["POST"])
