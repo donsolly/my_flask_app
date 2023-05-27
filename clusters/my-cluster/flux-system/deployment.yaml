@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: my-flask-app
-        image: donsolly/my_flask_app:v${{ github.run_number }}
+        image: donsolly/my_flask_app:sha256:49c4878206ef51c4e0310032da9895b509fccd8b5fd0e3a91888b41e7cb92cde
         ports:
         - containerPort: 5010
         imagePullPolicy: Always
