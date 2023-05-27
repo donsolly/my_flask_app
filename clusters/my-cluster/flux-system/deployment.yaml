@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: my-flask-app
-        image: donsolly/my_flask_app:1.1.0
+        image: donsolly/my_flask_app:1.0.0
         ports:
         - containerPort: 5010
         imagePullPolicy: Always
