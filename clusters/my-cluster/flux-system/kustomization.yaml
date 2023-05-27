@@ -7,7 +7,7 @@ spec:
   interval: 1m
   sourceRef:
     kind: GitRepository
-    name: my-flask-app
-  path: ./   # Path to the directory containing the kustomization.yaml file
+    name: my-flask-app  # this should match the GitRepository metadata.name
+  path: "./" # provide the relative path to your kustomization or deployment directory
   prune: true
   validation: client
