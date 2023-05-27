@@ -45,6 +45,7 @@ jobs:
         context: ./app
         push: true
         tags: donsolly/my_flask_app:latest
+        platforms: linux/amd64,linux/arm64
 
 # name: CI
 
