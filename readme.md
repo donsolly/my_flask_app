@@ -36,7 +36,7 @@ Before deploying, ensure to setup the necessary secrets and references:
 
 Follow these steps to start the application:
 
-1. Start the Docker service.
+1. Start the Docker service. `sudo systemctl start docker`
 2. Start Minikube: `minikube start`.
 3. Set up a tunnel to service the cluster: `minikube tunnel`.
 4. Apply the deployment configuration: `kubectl apply -f deployment.yaml`.
