@@ -18,3 +18,4 @@ spec:
   policy:
     semver:
       range: ">=1.0.0"
+      range: "latest"
