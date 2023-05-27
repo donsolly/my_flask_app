@@ -10,4 +10,4 @@ spec:
     name: my-flask-app  # this should match the GitRepository metadata.name
   path: "./" # provide the relative path to your kustomization or deployment directory
   prune: true
-  validation: client
+  validation: server
