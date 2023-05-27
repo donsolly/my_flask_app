@@ -16,6 +16,5 @@ spec:
   imageRepositoryRef:
     name: my-flask-app
   policy:
-    semver:
-      # range: ">=1.0.0"
-      range: "latest"
+    filterTags:
+      pattern: '.*'  # This regex matches all tags
