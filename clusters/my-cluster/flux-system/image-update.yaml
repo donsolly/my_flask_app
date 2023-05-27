@@ -17,7 +17,8 @@ spec:
     name: my-flask-app
   policy:
     filterTags:
-      pattern: '.*'  
+      pattern: '^v[0-9]+$' # this will match tags like v1, v2, etc.
+      extract: '$1'
 ---
 apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImageUpdateAutomation
