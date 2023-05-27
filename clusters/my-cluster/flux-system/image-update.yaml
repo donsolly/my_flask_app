@@ -17,4 +17,4 @@ spec:
     name: my-flask-app
   policy:
     semver:
-      range: ">=1.0.0"
+      range: ">=1"
