@@ -39,9 +39,14 @@ Follow these steps to start the application:
 1. Start the Docker service.
 2. Start Minikube: `minikube start`.
 3. Set up a tunnel to service the cluster: `minikube tunnel`.
-4. Retrieve the URL to access the Flask app: `minikube service my-flask-app --url`.
-5. Monitor your running pods: `kubectl get pods --watch`.
-6. Apply the deployment configuration: `kubectl apply -f deployment.yaml`.
+4. Apply the deployment configuration: `kubectl apply -f deployment.yaml`.
+5. Retrieve the URL to access the Flask app: `minikube service my-flask-app --url`.
+6. Monitor your running pods: `kubectl get pods --watch`.
+
+
+## Important note when running locally
+1. When build is done, do a git pull of your remote repo
+2. Apply the deployment configuration: `kubectl apply -f deployment.yaml`.
 
 ## Continuous Delivery Plan
 
