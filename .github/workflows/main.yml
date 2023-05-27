@@ -41,17 +41,17 @@ jobs:
       with:
         context: ./app
         push: true
-        tags: donsolly/my_flask_app:${{ github.sha }}
+        tags: donsolly/my_flask_app:v${{ github.run_number }}
 
     - name: Update deployment.yaml with image digest
       run: |
-        sed -i "s/donsolly\/my_flask_app:.*/donsolly\/my_flask_app:${{ steps.docker_build.outputs.digest }}/" ./clusters/my-cluster/flux-system/deployment.yaml
+        sed -i "s/donsolly\/my_flask_app:.*/donsolly\/my_flask_app:v${{ github.run_number }}/" ./clusters/my-cluster/flux-system/deployment.yaml
 
     - name: Commit changes
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git commit -am "Update image tag in deployment.yaml to ${{ steps.docker_build.outputs.digest }}"
+        git commit -am "Update image tag in deployment.yaml to v${{ github.run_number }}"
 
     - name: Push changes
       run: |
