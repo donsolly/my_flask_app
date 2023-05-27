@@ -12,3 +12,6 @@ spec:
   interval: 1m
   path: ./   # Path to the directory containing the deployment.yaml file
   prune: true
+resources:
+- gotk-components.yaml
+- gotk-sync.yaml
