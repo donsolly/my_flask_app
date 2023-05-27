@@ -1,0 +1,20 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImageRepository
+metadata:
+  name: my-flask-app
+  namespace: flux-system
+spec:
+  interval: 1m
+  image: <your_dockerhub_username>/my_flask_app
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: my-flask-app
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: my-flask-app
+  policy:
+    semver:
+      range: ">=1.0.0"
