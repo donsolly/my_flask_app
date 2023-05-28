@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: my-flask-app
-        image: donsolly/my_flask_app:v49  # {"$imagepolicy": "flux-system:my-flask-app"}
+        image: donsolly/my_flask_app:v51 # {"$imagepolicy": "flux-system:my-flask-app"}
         ports:
         - containerPort: 5010
         imagePullPolicy: Always
