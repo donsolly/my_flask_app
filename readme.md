@@ -20,17 +20,14 @@ Follow these steps to get your environment ready:
 ```
 git clone https://github.com/donsolly/my_flask_app.git
 ```
-4. Install flux 
-
+4. Install flux [Flux] (https://fluxcd.io/flux/installation/)
 
 ## Setup flux
 
 flux bootstrap github \
-  --owner=$GITHUB_USER \
-  --repository=$REPO \
-  --branch=minikube \
-  --namespace=flux \
-  --path=./clusters/minikube \
+  --owner=donsolly \
+  --repository=my_flask_app \
+  --path=clusters/my-cluster \
   --personal \
   --components-extra=image-reflector-controller,image-automation-controller
 ```
@@ -48,10 +45,10 @@ Before deploying, ensure to setup the necessary secrets and references:
 1. In your GitHub repository, create secrets for `DOCKER_PASSWORD` & `DOCKER_USERNAME` & `GH_PAT` (Github Token).
 2. Update the following credentials:
     - `.github/workflows/main.yml` (Line 31, 47): DockerHub credentials
-    - `clusters/my-cluster/flux-system/deployment.yaml`: DockerHub image reference
+    - `app/deployment.yaml`: DockerHub image reference
     - `clusters/my-cluster/flux-system/GitRepository.yaml`: Git repository URL
     - `clusters/my-cluster/flux-system/gotk-sync.yaml`: Git repository URL
-    - `clusters/my-cluster/flux-system/image-update.yaml`: DockerHub image reference
+    - `clusters/my-cluster/infra/image-update.yaml`: DockerHub image reference
 
 ## Usage
 
@@ -93,8 +90,7 @@ Monitor the application using built-in Kubernetes tools, such as `kubectl logs` 
 ## Troubleshooting
 
 - **Old build still running**:
-    1. Reapply the deployment configuration: `kubectl apply -f deployment.yaml `
-    2. Delete running pods to force Kubernetes to recreate them with the latest image: `kubectl delete pod --all`   
+    1. Reapply the deployment configuration: `kubectl apply -f deployment.yaml ` 
 - **General commands**:
     - View running pods: `kubectl get pods`
     - View pod details: `kubectl describe pod <POD_NAME>`
