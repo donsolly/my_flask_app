@@ -3,6 +3,9 @@ name: CI
 on:
   push:
     branches: [ main ]
+    paths:
+      - '**.py'
+      - '**Dockerfile'
 
 permissions:
   contents: write
