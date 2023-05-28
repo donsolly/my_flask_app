@@ -35,6 +35,7 @@ spec:
       ref:
         branch: main
   update:
+    path: ./clusters/my-cluster/app
     strategy: Setters
   commit:
     author:
