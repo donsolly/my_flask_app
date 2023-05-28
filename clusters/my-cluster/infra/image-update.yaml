@@ -7,7 +7,7 @@ spec:
   interval: 1m
   image: donsolly/my_flask_app
 ---
-apiVersion: image.toolkit.fluxcd.io/v1beta1
+apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImagePolicy
 metadata:
   name: my-flask-app
@@ -35,7 +35,7 @@ spec:
       ref:
         branch: main
   update:
-    path: ./clusters/my-cluster/app
+    path: ./app
     strategy: Setters
   commit:
     author:

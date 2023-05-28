@@ -11,7 +11,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./clusters/my-cluster/app
+  path: ./app
   prune: true
   wait: true
   targetNamespace: default
