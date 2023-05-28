@@ -16,9 +16,14 @@ spec:
   imageRepositoryRef:
     name: my-flask-app
   policy:
-    filterTags:
-      pattern: '^v[0-9]+$' # this will match tags like v1, v2, etc.
-      extract: '$1'
+    alphabetical:
+      order: asc
+  # filterTags:
+  #   pattern: '^v[0-9]+$' # this will match tags like v1, v2, etc.
+  #   extract: '$1' 
+  # policy:
+  #   semver:
+  #     range: '^v'
 ---
 apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImageUpdateAutomation
@@ -34,11 +39,11 @@ spec:
     checkout:
       ref:
         branch: main
+    commit:
+      author:
+        name: UpDate
+        email: soltaby@hotmail.com
+      messageTemplate: "Update {{.Updated.Images}}"
   update:
     path: ./app
     strategy: Setters
-  commit:
-    author:
-      name: UpDate
-      email: soltaby@hotmail.com
-    messageTemplate: "Update {{.Updated.Images}}"
