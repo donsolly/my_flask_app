@@ -20,6 +20,26 @@ Follow these steps to get your environment ready:
 ```
 git clone https://github.com/donsolly/my_flask_app.git
 ```
+4. Install flux 
+
+
+## Setup flux
+
+flux bootstrap github \
+  --owner=$GITHUB_USER \
+  --repository=$REPO \
+  --branch=minikube \
+  --namespace=flux \
+  --path=./clusters/minikube \
+  --personal \
+  --components-extra=image-reflector-controller,image-automation-controller
+```
+
+### Update key to write to repo to allow image update
+
+```bash
+kubectl -n flux get secret flux-system -o json | jq '.data."identity.pub"' -r | base64 -d
+```
 
 ## Deployment
 
@@ -44,10 +64,6 @@ Follow these steps to start the application:
 5. Retrieve the URL to access the Flask app: `minikube service my-flask-app --url`.
 6. Monitor your running pods: `kubectl get pods --watch`.
 
-
-## Important note when running locally
-1. When build is done, do a git pull of your remote repo
-2. Apply the deployment configuration: `kubectl apply -f deployment.yaml`.
 
 ## Continuous Delivery Plan
 
