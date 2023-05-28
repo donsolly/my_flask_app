@@ -6,6 +6,7 @@ This repository contains a simple Flask application deployed to a Kubernetes clu
 
 - Docker
 - Kubernetes (Minikube)
+- Flux
 - Python 3.8
 - Git
 
