@@ -1,0 +1,44 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImageRepository
+metadata:
+  name: my-flask-app
+  namespace: flux-system
+spec:
+  interval: 1m
+  image: donsolly/my_flask_app
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: my-flask-app
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: my-flask-app
+  policy:
+    filterTags:
+      pattern: '^v[0-9]+$' # this will match tags like v1, v2, etc.
+      extract: '$1'
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImageUpdateAutomation
+metadata:
+  name: my-flask-app
+  namespace: flux-system
+spec:
+  interval: 1m
+  sourceRef:
+    kind: GitRepository
+    name: flux-system  
+  git:
+    checkout:
+      ref:
+        branch: main
+  update:
+    path: ./clusters/my-cluster/app
+    strategy: Setters
+  commit:
+    author:
+      name: UpDate
+      email: soltaby@hotmail.com
+    messageTemplate: "Update {{.Updated.Images}}"
