@@ -1,6 +1,6 @@
 # My Flask App
 
-This repository contains a simple Flask application deployed to a Kubernetes cluster using Docker, GitHub Actions for CI/CD, and FluxCD for GitOps-based deployment.
+This repository contains a simple Flask application deployed to a Kubernetes cluster using Docker, GitHub Actions for CI, and FluxCD for CD.
 
 ## Prerequisites
 
