@@ -1,11 +1,10 @@
-# .buildkite/pipeline.yml
 steps:
-  - label: "Detect Clowns"
-    # command:
-    #   - "bk run"
+  - label: ":clown DetectClowns"
     plugins:
       - detect-clowns#v2.0.0: ~
+# to test a failed build for detect clown use this "🤡" in the clown_detect.txt file
 
+# This is just another plugin that has nothing to do with your assignment. It is to check a shell for error before it runs. I created a hooks/ folder with a check for it
   - label: ":shell: Shellcheck"
     plugins:
       - shellcheck#v1.3.0:
