@@ -5,5 +5,3 @@ steps:
       - "bk run"
     plugins:
       - detect-clowns#v2.0.0: ~
-    agents:
-      queue: "default"
