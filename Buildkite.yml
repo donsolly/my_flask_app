@@ -1,7 +1,9 @@
+# .buildkite/pipeline.yml
 steps:
-  - label: "🤡 :hammer:"
+  - label: "Detect Clowns"
+    command:
+      - "bk run"
     plugins:
-      - plugin-tester#v1.1.0:
-          plugin-to-test:
-            name: "detect-clowns"
-            version: "v2.0.0"
+      - detect-clowns#v2.0.0: ~
+    agents:
+      queue: "default"
