@@ -1,5 +1,7 @@
 steps:
   - label: "🤡 :hammer:"
     plugins:
-      - detect-clowns#v2.0.0: ~
-          id: plugin-tester#v1.1.0
+      - plugin-tester#v1.1.0:
+          plugin-to-test:
+            name: "detect-clowns"
+            version: "v2.0.0"
