@@ -1,7 +1,7 @@
 # .buildkite/pipeline.yml
 steps:
   - label: "Detect Clowns"
-    command:
-      - "bk run"
+    # command:
+    #   - "bk run"
     plugins:
       - detect-clowns#v2.0.0: ~
