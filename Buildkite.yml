@@ -2,16 +2,17 @@ steps:
   - label: "🤡 :hammer:"
     plugins:
       - plugin-tester#v1.1.0:
-          platform: linux/arm64/v8 # This is an assumption. Update based on the plugin's documentation.
+          id: detect-clowns
 
   - label: ":sparkles: lint"
     plugins:
       - plugin-linter#v3.2.0:
           id: detect-clowns
-          platform: linux/arm64/v8 # This is an assumption. Update based on the plugin's documentation.
+  
 
   - label: ":shell: Shellcheck"
     plugins:
       - shellcheck#v1.3.0:
+          id: detect-clowns
           files: hooks/**
-          platform: linux/arm64/v8 # This is an assumption. Update based on the plugin's documentation.
+        
