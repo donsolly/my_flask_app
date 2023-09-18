@@ -1,18 +1,5 @@
 steps:
   - label: "🤡 :hammer:"
     plugins:
-      - plugin-tester#v1.1.0:
-          id: detect-clowns
-
-  - label: ":sparkles: lint"
-    plugins:
-      - plugin-linter#v3.2.0:
-          id: detect-clowns
-  
-
-  - label: ":shell: Shellcheck"
-    plugins:
-      - shellcheck#v1.3.0:
-          id: detect-clowns
-          files: hooks/**
-        
+      - detect-clowns#v2.0.0: ~
+          id: plugin-tester#v1.1.0
